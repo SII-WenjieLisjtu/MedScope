@@ -1,6 +1,6 @@
 <div align="center">
 
-# 🏥 MedScope
+# MedScope
 
 **Incentivizing "Think with Videos" for Clinical Reasoning via Coarse-to-Fine Tool Calling**
 
@@ -18,7 +18,7 @@
 <img src="assets/logo_sii.jpg" height="60" alt="Shanghai Innovation Institute"> &nbsp;&nbsp;&nbsp;&nbsp;
 <img src="assets/logo_sjtu_medicine.png" height="60" alt="Shanghai Jiao Tong University"> &nbsp;&nbsp;&nbsp;&nbsp;
 <img src="assets/logo_fudan.png" height="60" alt="Fudan University"> &nbsp;&nbsp;&nbsp;&nbsp;
-<img src="assets/公司logo.png" height="60" alt="LeapQuest">
+<img src="assets/leapquest.png" height="60" alt="LeapQuest">
 
 </div>
 
@@ -34,7 +34,7 @@
 
 ## 📰 动态
 
-- **2026.05** — 我们的论文被 **ICML 2026** 录用！我们将在第43届国际机器学习大会上展示 MedScope。
+- 🎉 **2026.05** — 我们的论文被 **ICML 2026** 录用！我们将在第43届国际机器学习大会上展示 MedScope。🎊🥳✨
 
 ---
 
@@ -145,40 +145,7 @@ MedScope/
 
 ## 🚀 快速开始 / 安装
 
-> ⚠️ **注意**：代码、模型与数据即将正式发布。以下安装步骤为预期用法，正式发布后可直接使用。
-
-### 环境准备
-
-```bash
-# 克隆仓库（即将可用）
-git clone https://github.com/SII-WenjieLisjtu/MedScope.git
-cd MedScope
-
-# 创建虚拟环境
-conda create -n medscope python=3.10
-conda activate medscope
-
-# 安装依赖
-pip install -r requirements.txt
-```
-
-### 模型下载（即将发布）
-
-```bash
-# 预计可通过 Hugging Face 或 ModelScope 下载
-# pip install huggingface_hub
-# huggingface-cli download SII-WenjieLisjtu/MedScope
-```
-
-### 快速推理（示例）
-
-```python
-# 即将发布：一行代码加载模型并进行临床视频推理
-from medscope import MedScopePipeline
-
-pipe = MedScopePipeline.from_pretrained("SII-WenjieLisjtu/MedScope")
-result = pipe.predict(video_path="example_surgery.mp4", question="请描述手术关键步骤")
-```
+> 🚧 **即将发布！** 代码、模型权重与详细使用说明将在整理完毕后发布，敬请期待！
 
 ---
 
@@ -284,7 +251,7 @@ For questions or suggestions, please feel free to open an issue or contact the a
   <img src="assets/logo_sii.jpg" height="40" alt="Shanghai Innovation Institute"> &nbsp;&nbsp;&nbsp;&nbsp;
   <img src="assets/logo_sjtu_medicine.png" height="40" alt="Shanghai Jiao Tong University"> &nbsp;&nbsp;&nbsp;&nbsp;
   <img src="assets/logo_fudan.png" height="40" alt="Fudan University"> &nbsp;&nbsp;&nbsp;&nbsp;
-  <img src="assets/公司logo.png" height="40" alt="LeapQuest">
+  <img src="assets/leapquest.png" height="40" alt="LeapQuest">
 
   <p><small>Shanghai Innovation Institute &nbsp;|&nbsp; Shanghai Jiao Tong University &nbsp;|&nbsp; Fudan University &nbsp;|&nbsp; LeapQuest</small></p>
 

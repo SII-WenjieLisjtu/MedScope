@@ -1,6 +1,6 @@
 <div align="center">
 
-# 🏥 MedScope
+# MedScope
 
 **Incentivizing "Think with Videos" for Clinical Reasoning via Coarse-to-Fine Tool Calling**
 
@@ -18,7 +18,7 @@
 <img src="assets/logo_sii.jpg" height="60" alt="Shanghai Innovation Institute"> &nbsp;&nbsp;&nbsp;&nbsp;
 <img src="assets/logo_sjtu_medicine.png" height="60" alt="Shanghai Jiao Tong University"> &nbsp;&nbsp;&nbsp;&nbsp;
 <img src="assets/logo_fudan.png" height="60" alt="Fudan University"> &nbsp;&nbsp;&nbsp;&nbsp;
-<img src="assets/公司logo.png" height="60" alt="LeapQuest">
+<img src="assets/leapquest.png" height="60" alt="LeapQuest">
 
 </div>
 
@@ -34,7 +34,7 @@
 
 ## 📰 News
 
-- **2026.05** — Our paper is accepted by **ICML 2026**! We will present MedScope at the 43rd International Conference on Machine Learning.
+- 🎉 **2026.05** — Our paper is accepted by **ICML 2026**! We will present MedScope at the 43rd International Conference on Machine Learning. 🎊🥳✨
 
 ---
 
@@ -110,35 +110,7 @@ MedScope achieves **state-of-the-art** performance among open-source models on b
 
 ## 🚀 Quick Start
 
-### Installation
-
-> 🚧 Coming soon! The code and model checkpoints will be released shortly.
-
-Once released, you will be able to install MedScope via:
-
-```bash
-# Clone the repository
-git clone https://github.com/SII-WenjieLisjtu/MedScope.git
-cd MedScope
-
-# Create a conda environment
-conda create -n medscope python=3.10
-conda activate medscope
-
-# Install dependencies
-pip install -r requirements.txt
-```
-
-### Inference
-
-```python
-# Example inference script (coming soon)
-from medscope import MedScopePipeline
-
-model = MedScopePipeline.from_pretrained("SII-WenjieLisjtu/MedScope-7B")
-result = model("Describe the surgical procedure in this video.", video="path/to/video.mp4")
-print(result)
-```
+> 🚧 **Coming soon!** The code, model checkpoints, and detailed usage instructions will be released shortly. Stay tuned!
 
 ---
 
@@ -281,7 +253,7 @@ For questions or suggestions, please feel free to open an issue or contact the a
 <img src="assets/logo_sii.jpg" height="40" alt="Shanghai Innovation Institute"> &nbsp;&nbsp;&nbsp;&nbsp;
 <img src="assets/logo_sjtu_medicine.png" height="40" alt="Shanghai Jiao Tong University"> &nbsp;&nbsp;&nbsp;&nbsp;
 <img src="assets/logo_fudan.png" height="40" alt="Fudan University"> &nbsp;&nbsp;&nbsp;&nbsp;
-<img src="assets/公司logo.png" height="40" alt="LeapQuest">
+<img src="assets/leapquest.png" height="40" alt="LeapQuest">
 
 <p><small>Shanghai Innovation Institute &nbsp;|&nbsp; Shanghai Jiao Tong University &nbsp;|&nbsp; Fudan University &nbsp;|&nbsp; LeapQuest</small></p>
 
