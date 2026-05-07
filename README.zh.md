@@ -6,6 +6,7 @@
 
 [![ICML](https://img.shields.io/badge/ICML-2026-blue)](https://icml.cc/Conferences/2026)
 [![arXiv](https://img.shields.io/badge/arXiv-2602.13332-b31b1b.svg)](https://arxiv.org/abs/2602.13332)
+[![GitHub Stars](https://img.shields.io/github/stars/SII-WenjieLisjtu/MedScope?style=social)](https://github.com/SII-WenjieLisjtu/MedScope)
 [![License](https://img.shields.io/badge/License-Apache%202.0-green.svg)](LICENSE)
 
 </div>
@@ -14,7 +15,8 @@
 
 <img src="assets/logo_sii.jpg" height="60" alt="Shanghai Innovation Institute"> &nbsp;&nbsp;&nbsp;&nbsp;
 <img src="assets/logo_sjtu_medicine.png" height="60" alt="Shanghai Jiao Tong University"> &nbsp;&nbsp;&nbsp;&nbsp;
-<img src="assets/logo_fudan.png" height="60" alt="Fudan University">
+<img src="assets/logo_fudan.png" height="60" alt="Fudan University"> &nbsp;&nbsp;&nbsp;&nbsp;
+<img src="assets/公司logo.png" height="60" alt="LeapQuest">
 
 </div>
 
@@ -25,6 +27,12 @@
   <a href="README.md">🇺🇸 English</a> &nbsp;|&nbsp;
   <a href="#citation">[Citation]</a>
 </div>
+
+---
+
+### 动态
+
+- **2026.05** — 我们的论文被 **ICML 2026** 录用！我们将在第43届国际机器学习大会上展示 MedScope。
 
 ---
 
