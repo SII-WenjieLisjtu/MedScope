@@ -1,6 +1,6 @@
 <div align="center">
 
-# MedScope
+# 🏥 MedScope
 
 **Incentivizing "Think with Videos" for Clinical Reasoning via Coarse-to-Fine Tool Calling**
 
@@ -8,6 +8,8 @@
 [![arXiv](https://img.shields.io/badge/arXiv-2602.13332-b31b1b.svg)](https://arxiv.org/abs/2602.13332)
 [![GitHub Stars](https://img.shields.io/github/stars/SII-WenjieLisjtu/MedScope?style=social)](https://github.com/SII-WenjieLisjtu/MedScope)
 [![License](https://img.shields.io/badge/License-Apache%202.0-green.svg)](LICENSE)
+[![Python](https://img.shields.io/badge/Python-3.10%2B-blue)](https://www.python.org/)
+[![PyTorch](https://img.shields.io/badge/PyTorch-2.3%2B-ee4c2c.svg)](https://pytorch.org/)
 
 </div>
 
@@ -30,13 +32,13 @@
 
 ---
 
-### News
+## 📰 News
 
 - **2026.05** — Our paper is accepted by **ICML 2026**! We will present MedScope at the 43rd International Conference on Machine Learning.
 
 ---
 
-### Overview
+## 🏗️ Overview
 
 **MedScope** is a tool-using clinical video reasoning model that enables doctors to **"think with videos"** through iterative, coarse-to-fine evidence seeking and verification over long-form medical procedures. Unlike conventional multimodal large language models that passively sample videos, MedScope interleaves intermediate reasoning with targeted tool calls to iteratively locate, verify, and justify predictions with temporally grounded visual evidence.
 
@@ -46,7 +48,7 @@ This repository contains the official implementation of our ICML 2026 paper:
 
 ---
 
-### Framework
+## 🏗️ Framework
 
 <div align="center">
   <img src="assets/figure_framework.png" width="90%" alt="MedScope Framework">
@@ -55,7 +57,7 @@ This repository contains the official implementation of our ICML 2026 paper:
 
 ---
 
-### Key Contributions
+## 🌟 Key Contributions
 
 1. **Medical Visual Chain-of-Thought Paradigm**  
    We propose a "think with videos" paradigm and instantiate it with **MedScope**, a tool-using LMM trained via a three-stage pipeline (warm-up, visual-CoT cold-start, and grounding-aware GRPO) that elicits coarse-to-fine clinical reasoning.
@@ -71,7 +73,7 @@ This repository contains the official implementation of our ICML 2026 paper:
 
 ---
 
-### Main Results
+## 📊 Main Results
 
 MedScope achieves **state-of-the-art** performance among open-source models on both in-domain and out-of-domain evaluations.
 
@@ -97,7 +99,7 @@ MedScope achieves **state-of-the-art** performance among open-source models on b
 
 ---
 
-### Dataset Statistics
+## 📊 Dataset Statistics
 
 <div align="center">
   <img src="assets/figure_dataset_stats.png" width="90%" alt="ClinVideoSuite Statistics">
@@ -106,7 +108,140 @@ MedScope achieves **state-of-the-art** performance among open-source models on b
 
 ---
 
-### Release Status
+## 🚀 Quick Start
+
+### Installation
+
+> 🚧 Coming soon! The code and model checkpoints will be released shortly.
+
+Once released, you will be able to install MedScope via:
+
+```bash
+# Clone the repository
+git clone https://github.com/SII-WenjieLisjtu/MedScope.git
+cd MedScope
+
+# Create a conda environment
+conda create -n medscope python=3.10
+conda activate medscope
+
+# Install dependencies
+pip install -r requirements.txt
+```
+
+### Inference
+
+```python
+# Example inference script (coming soon)
+from medscope import MedScopePipeline
+
+model = MedScopePipeline.from_pretrained("SII-WenjieLisjtu/MedScope-7B")
+result = model("Describe the surgical procedure in this video.", video="path/to/video.mp4")
+print(result)
+```
+
+---
+
+## 📁 Project Structure
+
+Once fully released, the repository will be organized as follows:
+
+```
+MedScope/
+├── README.md                 # Project documentation
+├── README.zh.md              # Chinese documentation
+├── requirements.txt          # Python dependencies
+├── setup.py                  # Package installation
+├── medscope/                 # Core package
+│   ├── models/               # Model architectures
+│   ├── trainers/             # Training loops (SFT, GA-GRPO)
+│   ├── data/                 # Data loaders & preprocessing
+│   ├── tools/                # Tool definitions & executors
+│   └── utils/                # Utility functions
+├── scripts/                  # Training & evaluation scripts
+│   ├── train_sft.py          # Warm-up & Visual-CoT SFT
+│   ├── train_grpo.py         # GA-GRPO reinforcement learning
+│   └── evaluate.py           # Benchmark evaluation
+├── configs/                  # YAML configuration files
+│   ├── sft_warmup.yaml
+│   ├── sft_coldstart.yaml
+│   └── grpo.yaml
+├── data/                     # Dataset directory
+│   ├── clinvideo_cap/        # ClinVideo-Cap-635K
+│   ├── clinvideo_qa/         # ClinVideo-QA-254K
+│   ├── clinvideo_vcot/       # ClinVideo-VCoT-34K
+│   └── clinvideo_eval/       # ClinVideo-Eval benchmark
+├── checkpoints/              # Model checkpoints
+└── assets/                   # Figures & logos
+```
+
+---
+
+## 🤖 Model Card
+
+| Attribute | Details |
+|-----------|---------|
+| **Model Name** | MedScope-7B |
+| **Base Model** | [Qwen2.5-VL-7B-Instruct](https://huggingface.co/Qwen/Qwen2.5-VL-7B-Instruct) |
+| **Model Type** | Vision-Language Model (VLM) with Tool Use |
+| **Parameters** | ~7B |
+| **Context Length** | 32,768 tokens |
+| **Input Modalities** | Video, Text |
+| **Output Modalities** | Text (reasoning + tool calls) |
+| **Training Data** | ClinVideoSuite (Cap-635K, QA-254K, VCoT-34K, CoT-84K) |
+| **License** | Apache 2.0 |
+
+### Training Pipeline
+
+MedScope is trained via a **three-stage pipeline**:
+
+| Stage | Objective | Data | Description |
+|-------|-----------|------|-------------|
+| **Stage 1** | Warm-up SFT | ClinVideo-Cap-635K + ClinVideo-QA-254K | Supervised fine-tuning to build foundational clinical video understanding and reasoning capabilities. |
+| **Stage 2** | Visual-CoT Cold-Start SFT | ClinVideo-VCoT-34K + ClinVideo-CoT-84K | Teaches the model to generate explicit intermediate reasoning chains and tool calls with temporally grounded evidence. |
+| **Stage 3** | GA-GRPO RL | ClinVideo-Eval + sampled trajectories | Grounding-Aware Group Relative Policy Optimization with grounding-aligned rewards to refine tool-use precision and temporal alignment. |
+
+### Key Hyperparameters
+
+| Hyperparameter | Stage 1 (Warm-up) | Stage 2 (Cold-Start) | Stage 3 (GA-GRPO) |
+|----------------|-------------------|----------------------|-------------------|
+| Learning Rate | 2e-5 | 2e-5 | 1e-6 |
+| Batch Size | 128 | 128 | 64 |
+| Epochs | 3 | 3 | - |
+| Warmup Ratio | 0.03 | 0.03 | - |
+| LoRA Rank | 64 | 64 | 64 |
+| LoRA Alpha | 128 | 128 | 128 |
+| Group Size (GRPO) | - | - | 8 |
+| KL Penalty (GRPO) | - | - | 0.04 |
+| Reward Weights | - | - | Answer: 1.0, Grounding: 1.0, Format: 0.5 |
+
+---
+
+## 🎬 Demo
+
+<div align="center">
+
+| 🎬 Demo Video |
+|:--:|
+| *Demo video will be uploaded soon.* |
+
+</div>
+
+---
+
+## 🗺️ Roadmap
+
+| Milestone | Target Date | Status |
+|-----------|-------------|--------|
+| Paper (arXiv) | 2026.02 | ✅ Released |
+| Code Release | 2026.06 | 🚧 In Progress |
+| Model Release | 2026.06 | 🚧 In Progress |
+| Dataset Release | 2026.07 | 🚧 In Progress |
+| Demo Video | 2026.06 | 🚧 In Progress |
+
+---
+
+## 📦 Release Status
 
 - [x] Paper (arXiv)
 - [ ] **Code & Models** — *Will be released soon. Stay tuned!*
@@ -114,7 +249,7 @@ MedScope achieves **state-of-the-art** performance among open-source models on b
 
 ---
 
-<h2 id="citation">Citation</h2>
+## 📖 Citation
 
 If you find this work useful for your research, please consider citing our paper:
 
@@ -129,19 +264,25 @@ If you find this work useful for your research, please consider citing our paper
 
 ---
 
-## Acknowledgements
+## 🙏 Acknowledgements
 
 This work is supported by Shanghai Innovation Institute, Shanghai Jiao Tong University School of Medicine, and Shanghai Artificial Intelligence Laboratory. We gratefully acknowledge the clinical data support from Ruijin Hospital.
 
 ---
 
-## Contact
+## 📧 Contact
 
 For questions or suggestions, please feel free to open an issue or contact the authors.
 
 ---
 
 <div align="center">
-  <img src="assets/logo_sii.jpg" height="40" alt="Shanghai Innovation Institute">
-  <p><small>Shanghai Innovation Institute</small></p>
+
+<img src="assets/logo_sii.jpg" height="40" alt="Shanghai Innovation Institute"> &nbsp;&nbsp;&nbsp;&nbsp;
+<img src="assets/logo_sjtu_medicine.png" height="40" alt="Shanghai Jiao Tong University"> &nbsp;&nbsp;&nbsp;&nbsp;
+<img src="assets/logo_fudan.png" height="40" alt="Fudan University"> &nbsp;&nbsp;&nbsp;&nbsp;
+<img src="assets/公司logo.png" height="40" alt="LeapQuest">
+
+<p><small>Shanghai Innovation Institute &nbsp;|&nbsp; Shanghai Jiao Tong University &nbsp;|&nbsp; Fudan University &nbsp;|&nbsp; LeapQuest</small></p>
+
 </div>
