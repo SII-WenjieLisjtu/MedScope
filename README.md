@@ -13,7 +13,8 @@
 <div align="center">
 
 <img src="assets/logo_sii.jpg" height="60" alt="Shanghai Innovation Institute"> &nbsp;&nbsp;&nbsp;&nbsp;
-<img src="assets/logo_sjtu_medicine.png" height="60" alt="Shanghai Jiao Tong University">
+<img src="assets/logo_sjtu_medicine.png" height="60" alt="Shanghai Jiao Tong University"> &nbsp;&nbsp;&nbsp;&nbsp;
+<img src="assets/logo_fudan.png" height="60" alt="Fudan University">
 
 </div>
 
@@ -21,10 +22,12 @@
 
 <div align="center">
   <a href="https://arxiv.org/abs/2602.13332">[arXiv Paper]</a> &nbsp;|&nbsp;
-  <a href="#english">[English]</a> &nbsp;|&nbsp;
-  <a href="#chinese">[中文]</a> &nbsp;|&nbsp;
+  <a href="#english">🇺🇸 English</a> &nbsp;|&nbsp;
+  <a href="#chinese">🇨🇳 中文</a> &nbsp;|&nbsp;
   <a href="#citation">[Citation]</a>
 </div>
+
+> **Click 🇺🇸 English / 🇨🇳 中文 above to switch language.**
 
 ---
 
